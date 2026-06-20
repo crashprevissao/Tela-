@@ -1,0 +1,17 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" } // Essencial para baixar a biblioteca do cabo OTG
+    }
+}
+rootProject.name = "TelaESP32"
+include ':app'
