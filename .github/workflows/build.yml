@@ -18,14 +18,16 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Configurar Android SDK (API 36)
+    - name: Configurar Android SDK
       uses: android-actions/setup-android@v3
 
-    - name: Permitir execucao do Gradle
-      run: chmod +x ./gradlew
+    - name: Instalar Gradle (Substitui o gradlew)
+      uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: '8.7'
 
     - name: Construir APK de Debug
-      run: ./gradlew assembleDebug
+      run: gradle assembleDebug
 
     - name: Upload do APK Pronto
       uses: actions/upload-artifact@v4
